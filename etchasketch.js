@@ -2,8 +2,16 @@ const container = document.getElementById("container");
 const squareNumber = document.getElementById("squareNumber");
 
 squareNumber.addEventListener('click', () => {
-    height = prompt("How tall you want the grid to be? (Max. 100)", "20");
-    width = prompt("How tall you want the grid to be? (Max. 100)", "20");
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+    height = prompt("How tall you want the grid to be? (1-100)", "20");
+    width = prompt("How tall you want the grid to be? (1-100)", "20");
+    while (height > 100 || width > 100 || height < 1 || width < 1) {
+        alert("Height and width must be higher than 0 and lower than 100.");
+        height = prompt("How tall you want the grid to be? (Max. 100)", "20");
+        width = prompt("How tall you want the grid to be? (Max. 100)", "20");
+    }
     createNewGrid(height, width);
 });
 
