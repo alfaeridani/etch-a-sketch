@@ -1,0 +1,16 @@
+#container {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;   
+}
+
+.row {
+    display: flex;
+    gap: 1px;
+}
+
+.square {
+    background-color: black;
+    height: 40px;
+    width: 40px;
+}
