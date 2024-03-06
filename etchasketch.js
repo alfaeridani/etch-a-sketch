@@ -26,12 +26,18 @@ function createNewGrid(height, width) {
         }
         container.appendChild(row);
     }
+
     const squares = document.getElementsByClassName("square")
     const squaresArray = Array.from(squares);
 
     squaresArray.forEach(square => {
         square.addEventListener('mouseover', () => {
-            square.style.backgroundColor = "grey";
+            let red = Math.floor(Math.random() * 256);
+            let green = Math.floor(Math.random() * 256);
+            let blue = Math.floor(Math.random() * 256);
+            let color = `rgb(${red}, ${green}, ${blue})`;
+
+            square.style.backgroundColor = color;
         });
     });
 }
